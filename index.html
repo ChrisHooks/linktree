@@ -13,12 +13,13 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #fafafa;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            transition: background-color 0.3s ease;
         }
 
         .container {
@@ -28,9 +29,11 @@
             backdrop-filter: blur(10px);
             border-radius: 24px;
             padding: 40px 32px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             text-align: center;
             animation: slideUp 0.6s ease-out;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         @keyframes slideUp {
@@ -44,20 +47,58 @@
             }
         }
 
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 26px;
+            background: #E16A3D;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            padding: 3px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .theme-toggle::before {
+            content: '☀️';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #FFA45D;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .theme-toggle:hover {
+            background: #1C9290;
+        }
+
         .profile-image {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             margin: 0 auto 24px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #E16A3D, #FFA45D);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
             color: white;
             font-weight: bold;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 24px rgba(225, 106, 61, 0.5);
             transition: transform 0.3s ease;
+            border: 4px solid #FFA45D;
         }
 
         .profile-image:hover {
@@ -67,15 +108,45 @@
         .profile-name {
             font-size: 28px;
             font-weight: 700;
-            color: #2d3748;
+            color: #043E52;
             margin-bottom: 8px;
         }
 
         .profile-bio {
             font-size: 16px;
-            color: #718096;
+            color: #016A6D;
             margin-bottom: 32px;
             line-height: 1.5;
+        }
+
+        .social-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 32px 0 24px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(28, 146, 144, 0.2), rgba(1, 106, 109, 0.2));
+            border-radius: 16px;
+            border: 2px solid #1C9290;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #016A6D;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #043E52;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            font-weight: 600;
         }
 
         .links-container {
@@ -87,38 +158,53 @@
         .link-item {
             display: block;
             padding: 18px 24px;
-            background: white;
-            border: 2px solid #e2e8f0;
             border-radius: 16px;
             text-decoration: none;
-            color: #2d3748;
             font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .link-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.5s;
+        .github {
+            background: linear-gradient(135deg, #043E52, #016A6D);
+            color: white;
+            border: 3px solid #043E52;
         }
 
-        .link-item:hover::before {
-            left: 100%;
+        .linkedin {
+            background: linear-gradient(135deg, #016A6D, #1C9290);
+            color: white;
+            border: 3px solid #016A6D;
+        }
+
+        .twitter {
+            background: linear-gradient(135deg, #1C9290, #FFA45D);
+            color: white;
+            border: 3px solid #1C9290;
+        }
+
+        .portfolio {
+            background: linear-gradient(135deg, #FFA45D, #E16A3D);
+            color: white;
+            border: 3px solid #FFA45D;
+        }
+
+        .email {
+            background: linear-gradient(135deg, #E16A3D, #FFA45D);
+            color: white;
+            border: 3px solid #E16A3D;
+        }
+
+        .resume {
+            background: linear-gradient(135deg, #1C9290, #043E52);
+            color: white;
+            border: 3px solid #1C9290;
         }
 
         .link-item:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(225, 106, 61, 0.4);
         }
 
         .link-icon {
@@ -126,52 +212,107 @@
             font-size: 18px;
         }
 
-        .github { background: linear-gradient(135deg, #24292e, #586069); color: white; border: none; }
-        .linkedin { background: linear-gradient(135deg, #0077b5, #0a66c2); color: white; border: none; }
-        .twitter { background: linear-gradient(135deg, #1da1f2, #0d8bd9); color: white; border: none; }
-        .portfolio { background: linear-gradient(135deg, #ff6b6b, #ee5a52); color: white; border: none; }
-        .email { background: linear-gradient(135deg, #ea4335, #d33b2c); color: white; border: none; }
-        .resume { background: linear-gradient(135deg, #4caf50, #388e3c); color: white; border: none; }
-
-        .github:hover, .linkedin:hover, .twitter:hover, .portfolio:hover, .email:hover, .resume:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 32px 0 24px 0;
-            padding: 20px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 16px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: 700;
-            color: #667eea;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 4px;
-        }
-
         .footer {
             margin-top: 32px;
             padding-top: 24px;
-            border-top: 1px solid rgba(28, 146, 144, 0.3);
+            border-top: 3px solid #1C9290;
             color: #016A6D;
             font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Dark Mode Styles */
+        body[data-theme="dark"] {
+            background: #0a0a0a;
+        }
+
+        body[data-theme="dark"] .container {
+            background: rgba(20, 20, 20, 0.95);
+            border: 2px solid #1C9290;
+        }
+
+        body[data-theme="dark"] .profile-name {
+            color: #FFA45D;
+        }
+
+        body[data-theme="dark"] .profile-bio {
+            color: #1C9290;
+        }
+
+        body[data-theme="dark"] .theme-toggle {
+            background: #043E52;
+        }
+
+        body[data-theme="dark"] .theme-toggle::before {
+            content: '🌙';
+            background: #1C9290;
+            transform: translateX(24px);
+        }
+
+        body[data-theme="dark"] .social-stats {
+            background: linear-gradient(135deg, rgba(28, 146, 144, 0.3), rgba(1, 106, 109, 0.3));
+            border: 2px solid #1C9290;
+        }
+
+        body[data-theme="dark"] .stat-number {
+            color: #FFA45D;
+        }
+
+        body[data-theme="dark"] .stat-label {
+            color: #1C9290;
+        }
+
+        body[data-theme="dark"] .footer {
+            border-top: 3px solid #E16A3D;
+            color: #1C9290;
+        }
+
+        /* Auto dark mode (system preference) */
+        @media (prefers-color-scheme: dark) {
+            body:not([data-theme="light"]) {
+                background: #0a0a0a;
+            }
+
+            body:not([data-theme="light"]) .container {
+                background: rgba(20, 20, 20, 0.95);
+                border: 2px solid #1C9290;
+            }
+
+            body:not([data-theme="light"]) .profile-name {
+                color: #FFA45D;
+            }
+
+            body:not([data-theme="light"]) .profile-bio {
+                color: #1C9290;
+            }
+
+            body:not([data-theme="light"]) .theme-toggle {
+                background: #043E52;
+            }
+
+            body:not([data-theme="light"]) .theme-toggle::before {
+                content: '🌙';
+                background: #1C9290;
+                transform: translateX(24px);
+            }
+
+            body:not([data-theme="light"]) .social-stats {
+                background: linear-gradient(135deg, rgba(28, 146, 144, 0.3), rgba(1, 106, 109, 0.3));
+                border: 2px solid #1C9290;
+            }
+
+            body:not([data-theme="light"]) .stat-number {
+                color: #FFA45D;
+            }
+
+            body:not([data-theme="light"]) .stat-label {
+                color: #1C9290;
+            }
+
+            body:not([data-theme="light"]) .footer {
+                border-top: 3px solid #E16A3D;
+                color: #1C9290;
+            }
         }
 
         @media (max-width: 480px) {
@@ -179,11 +320,11 @@
                 margin: 20px;
                 padding: 32px 24px;
             }
-            
+
             .profile-name {
                 font-size: 24px;
             }
-            
+
             .link-item {
                 padding: 16px 20px;
             }
@@ -192,11 +333,14 @@
 </head>
 <body>
     <div class="container">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+
         <!-- Profile Section -->
         <div class="profile-image">YN</div>
         <h1 class="profile-name">Your Name</h1>
         <p class="profile-bio">Full Stack Developer | Open Source Enthusiast<br>Building amazing things with code ✨</p>
-        
+
         <!-- Stats Section -->
         <div class="social-stats">
             <div class="stat">
@@ -212,40 +356,40 @@
                 <span class="stat-label">Stars</span>
             </div>
         </div>
-        
+
         <!-- Links Section -->
         <div class="links-container">
             <a href="https://github.com/yourusername" class="link-item github" target="_blank">
                 <span class="link-icon">📱</span>
                 GitHub Profile
             </a>
-            
+
             <a href="https://yourportfolio.com" class="link-item portfolio" target="_blank">
                 <span class="link-icon">🌐</span>
                 Portfolio Website
             </a>
-            
+
             <a href="https://linkedin.com/in/yourusername" class="link-item linkedin" target="_blank">
                 <span class="link-icon">💼</span>
                 LinkedIn
             </a>
-            
+
             <a href="https://twitter.com/yourusername" class="link-item twitter" target="_blank">
                 <span class="link-icon">🐦</span>
                 Twitter
             </a>
-            
+
             <a href="mailto:your.email@example.com" class="link-item email">
                 <span class="link-icon">✉️</span>
                 Email Me
             </a>
-            
+
             <a href="https://yourresume.com/resume.pdf" class="link-item resume" target="_blank">
                 <span class="link-icon">📄</span>
                 Download Resume
             </a>
         </div>
-        
+
         <!-- Footer -->
         <div class="footer">
             <p>Made with ❤️ for GitHub Pages</p>
@@ -253,77 +397,41 @@
     </div>
 
     <script>
-        // Add click tracking
-        document.querySelectorAll('.link-item').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Add a subtle click animation
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-                
-                // You can add analytics tracking here
-                console.log('Link clicked:', this.textContent.trim());
-            });
-        });
-
-        // Theme management (without localStorage to avoid console errors)
+        // Theme management
         let currentTheme = null;
-        
+
         function setTheme(theme) {
             currentTheme = theme;
             document.body.setAttribute('data-theme', theme);
-            updateToggleButton();
         }
-        
-        function updateToggleButton() {
-            // Toggle button styling is handled by CSS
-        }
-        
+
         function toggleTheme() {
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
         }
-        
+
         function initTheme() {
-            // Default to system preference
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             setTheme(prefersDark ? 'dark' : 'light');
         }
-        
-        // Initialize theme on page load
+
+        // Initialize theme
         initTheme();
-        
-        // Add click listener to toggle button
+
+        // Add toggle functionality
         document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-        
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            // Only update if user hasn't manually overridden
-            if (currentTheme === null || confirm('System theme changed. Update to match?')) {
-                setTheme(e.matches ? 'dark' : 'light');
-            }
+
+        // Add click tracking
+        document.querySelectorAll('.link-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+
+                console.log('Link clicked:', this.textContent.trim());
+            });
         });
-
-        // Add typing animation to bio (optional)
-        const bio = document.querySelector('.profile-bio');
-        const originalText = bio.textContent;
-        
-        function typeWriter() {
-            bio.textContent = '';
-            let i = 0;
-            const timer = setInterval(() => {
-                if (i < originalText.length) {
-                    bio.textContent += originalText.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(timer);
-                }
-            }, 50);
-        }
-
-        // Uncomment the line below to enable typing animation
-        // setTimeout(typeWriter, 800);
     </script>
 </body>
 </html>
