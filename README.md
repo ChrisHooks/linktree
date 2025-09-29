@@ -59,11 +59,25 @@ Edit the following files to customize your landing page:
 
 ## Deployment
 
-The built files are static and can be deployed to:
-- GitHub Pages
+### GitHub Pages (Automatic)
+
+This project includes a GitHub Action that automatically builds and deploys to GitHub Pages when you push to the `main` branch.
+
+**Setup Steps:**
+1. Push your code to a GitHub repository
+2. Go to your repo Settings → Pages → Source → GitHub Actions
+3. Push to main branch - the site will automatically deploy!
+
+Your site will be available at: `https://yourusername.github.io/linktree`
+
+### Manual Deployment
+
+The built files are also compatible with:
 - Netlify
 - Vercel
 - Any static hosting service
+
+Simply run `npm run build` and upload the `dist/` folder contents.
 
 ## Tech Stack
 

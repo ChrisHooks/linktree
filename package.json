@@ -2,6 +2,7 @@
   "name": "linktree-react",
   "version": "1.0.0",
   "description": "Personal Linktree-style landing page built with React",
+  "homepage": "https://chrishooks.github.io/linktree",
   "private": true,
   "scripts": {
     "dev": "vite",
