@@ -108,6 +108,8 @@ export const profileConfig = {
 
   // Footer configuration
   footer: {
-    text: "Made with ❤️ for GitHub Pages"
+    text: "Made with ❤️ for GitHub Pages",
+    repoText: "Make your own",
+    repoUrl: "https://github.com/ChrisHooks/linktree"
   }
 }

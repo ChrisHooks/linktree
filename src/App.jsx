@@ -95,7 +95,17 @@ function App() {
       </div>
 
       <div className="footer">
-        <p>{profileConfig.footer.text}</p>
+        <p>
+          {profileConfig.footer.text} •{' '}
+          <a
+            href={profileConfig.footer.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            {profileConfig.footer.repoText} →
+          </a>
+        </p>
       </div>
     </div>
   )

@@ -222,6 +222,18 @@ body {
     font-weight: 600;
 }
 
+.footer-link {
+    color: #E16A3D;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #FFA45D;
+    text-decoration: underline;
+}
+
 /* Dark Mode Styles */
 body[data-theme="dark"] {
     background: #0a0a0a;
@@ -266,6 +278,14 @@ body[data-theme="dark"] .stat-label {
 body[data-theme="dark"] .footer {
     border-top: 3px solid #E16A3D;
     color: #1C9290;
+}
+
+body[data-theme="dark"] .footer-link {
+    color: #FFA45D;
+}
+
+body[data-theme="dark"] .footer-link:hover {
+    color: #E16A3D;
 }
 
 /* Auto dark mode (system preference) */
@@ -313,6 +333,14 @@ body[data-theme="dark"] .footer {
     body:not([data-theme="light"]) .footer {
         border-top: 3px solid #E16A3D;
         color: #1C9290;
+    }
+
+    body:not([data-theme="light"]) .footer-link {
+        color: #FFA45D;
+    }
+
+    body:not([data-theme="light"]) .footer-link:hover {
+        color: #E16A3D;
     }
 }
 
