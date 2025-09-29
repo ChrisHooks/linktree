@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    animation: slideUp 0.6s ease-out;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 26px;
+    background: #E16A3D;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.theme-toggle::before {
+    content: '☀️';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #FFA45D;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.theme-toggle:hover {
+    background: #1C9290;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, #E16A3D, #FFA45D);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 8px 24px rgba(225, 106, 61, 0.5);
+    transition: transform 0.3s ease;
+    border: 4px solid #FFA45D;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #043E52;
+    margin-bottom: 8px;
+}
+
+.profile-bio {
+    font-size: 16px;
+    color: #016A6D;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.social-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 32px 0 24px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(28, 146, 144, 0.2), rgba(1, 106, 109, 0.2));
+    border-radius: 16px;
+    border: 2px solid #1C9290;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: #016A6D;
+    display: block;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #043E52;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-item {
+    display: block;
+    padding: 18px 24px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.github {
+    background: linear-gradient(135deg, #043E52, #016A6D);
+    color: white;
+    border: 3px solid #043E52;
+}
+
+.linkedin {
+    background: linear-gradient(135deg, #016A6D, #1C9290);
+    color: white;
+    border: 3px solid #016A6D;
+}
+
+.twitter {
+    background: linear-gradient(135deg, #1C9290, #FFA45D);
+    color: white;
+    border: 3px solid #1C9290;
+}
+
+.portfolio {
+    background: linear-gradient(135deg, #FFA45D, #E16A3D);
+    color: white;
+    border: 3px solid #FFA45D;
+}
+
+.email {
+    background: linear-gradient(135deg, #E16A3D, #FFA45D);
+    color: white;
+    border: 3px solid #E16A3D;
+}
+
+.resume {
+    background: linear-gradient(135deg, #1C9290, #043E52);
+    color: white;
+    border: 3px solid #1C9290;
+}
+
+.link-item:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(225, 106, 61, 0.4);
+}
+
+.link-icon {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 3px solid #1C9290;
+    color: #016A6D;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Dark Mode Styles */
+body[data-theme="dark"] {
+    background: #0a0a0a;
+}
+
+body[data-theme="dark"] .container {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #1C9290;
+}
+
+body[data-theme="dark"] .profile-name {
+    color: #FFA45D;
+}
+
+body[data-theme="dark"] .profile-bio {
+    color: #1C9290;
+}
+
+body[data-theme="dark"] .theme-toggle {
+    background: #043E52;
+}
+
+body[data-theme="dark"] .theme-toggle::before {
+    content: '🌙';
+    background: #1C9290;
+    transform: translateX(24px);
+}
+
+body[data-theme="dark"] .social-stats {
+    background: linear-gradient(135deg, rgba(28, 146, 144, 0.3), rgba(1, 106, 109, 0.3));
+    border: 2px solid #1C9290;
+}
+
+body[data-theme="dark"] .stat-number {
+    color: #FFA45D;
+}
+
+body[data-theme="dark"] .stat-label {
+    color: #1C9290;
+}
+
+body[data-theme="dark"] .footer {
+    border-top: 3px solid #E16A3D;
+    color: #1C9290;
+}
+
+/* Auto dark mode (system preference) */
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+        background: #0a0a0a;
+    }
+
+    body:not([data-theme="light"]) .container {
+        background: rgba(20, 20, 20, 0.95);
+        border: 2px solid #1C9290;
+    }
+
+    body:not([data-theme="light"]) .profile-name {
+        color: #FFA45D;
+    }
+
+    body:not([data-theme="light"]) .profile-bio {
+        color: #1C9290;
+    }
+
+    body:not([data-theme="light"]) .theme-toggle {
+        background: #043E52;
+    }
+
+    body:not([data-theme="light"]) .theme-toggle::before {
+        content: '🌙';
+        background: #1C9290;
+        transform: translateX(24px);
+    }
+
+    body:not([data-theme="light"]) .social-stats {
+        background: linear-gradient(135deg, rgba(28, 146, 144, 0.3), rgba(1, 106, 109, 0.3));
+        border: 2px solid #1C9290;
+    }
+
+    body:not([data-theme="light"]) .stat-number {
+        color: #FFA45D;
+    }
+
+    body:not([data-theme="light"]) .stat-label {
+        color: #1C9290;
+    }
+
+    body:not([data-theme="light"]) .footer {
+        border-top: 3px solid #E16A3D;
+        color: #1C9290;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px;
+        padding: 32px 24px;
+    }
+
+    .profile-name {
+        font-size: 24px;
+    }
+
+    .link-item {
+        padding: 16px 20px;
+    }
+}
