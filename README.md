@@ -34,10 +34,13 @@ npm run dev
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
+- `npm run dev` - Start development server with hot reload
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 - `npm start` - Alias for `npm run dev`
+- `npm run clean` - Remove dist folder
+- `npm run clean:build` - Clean and rebuild from scratch
+- `npm run build:watch` - Build and watch for file changes
 
 ## Building for Production
 
