@@ -2,7 +2,7 @@ export const profileConfig = {
   // Basic profile info
   name: "Chris Hooks",
   initials: "CH",
-  avatar: "https://media.licdn.com/dms/image/v2/C4E03AQHN-NIyNGvf6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639329424160?e=1761782400&v=beta&t=8hUszSO7J4F5yOnCYZ3s4Z9KZtVyGp9dv67vt5sj4bo", // Set to image URL/path to display avatar, null to show initials
+  avatar: "avatar.png", // Set to image URL/path to display avatar, null to show initials
   bio: "Founder | Fractional CTO",
   tagline: "Building amazing things with code ✨",
 
