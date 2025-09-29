@@ -6,6 +6,7 @@ function App() {
   const [theme, setTheme] = useState('light')
   const [stats, setStats] = useState(profileConfig.fallbackStats)
   const [statsLoading, setStatsLoading] = useState(true)
+  const [showStats, setShowStats] = useState(true)
 
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -22,10 +23,18 @@ function App() {
       try {
         const socialStatsResults = await socialStatsService.fetchSocialStats(profileConfig.socialStats)
         const displayStats = socialStatsService.getDisplayStats(socialStatsResults, profileConfig.fallbackStats)
-        setStats(displayStats)
+
+        if (displayStats === null) {
+          // No platforms enabled - hide the stats section
+          setShowStats(false)
+        } else {
+          setStats(displayStats)
+          setShowStats(true)
+        }
       } catch (error) {
         console.error('Failed to load social stats:', error)
         // Keep fallback stats on error
+        setShowStats(true)
       } finally {
         setStatsLoading(false)
       }
@@ -67,16 +76,18 @@ function App() {
         {profileConfig.tagline}
       </p>
 
-      <div className="social-stats">
-        {stats.map((stat, index) => (
-          <div key={index} className="stat">
-            <span className="stat-number">
-              {statsLoading ? '...' : stat.number}
-            </span>
-            <span className="stat-label">{stat.label}</span>
-          </div>
-        ))}
-      </div>
+      {showStats && (
+        <div className="social-stats">
+          {stats.map((stat, index) => (
+            <div key={index} className="stat">
+              <span className="stat-number">
+                {statsLoading ? '...' : stat.number}
+              </span>
+              <span className="stat-label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="links-container">
         {profileConfig.links.map((link) => (

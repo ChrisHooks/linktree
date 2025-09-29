@@ -111,9 +111,19 @@ class SocialStatsService {
     throw new Error('Twitter API integration requires API credentials')
   }
 
+  // Check if any social platforms are enabled
+  hasEnabledPlatforms(socialStatsConfig) {
+    return Object.values(socialStatsConfig).some(config => config.enabled)
+  }
+
   // Main method to fetch stats based on platform configuration
   async fetchSocialStats(socialStatsConfig) {
     const results = {}
+
+    // If no platforms are enabled, return empty results
+    if (!this.hasEnabledPlatforms(socialStatsConfig)) {
+      return results
+    }
 
     for (const [platform, config] of Object.entries(socialStatsConfig)) {
       if (!config.enabled) continue
@@ -146,6 +156,11 @@ class SocialStatsService {
 
   // Get the first enabled platform's stats for display
   getDisplayStats(socialStatsResults, fallbackStats) {
+    // If no platforms were attempted (all disabled), return null to hide section
+    if (Object.keys(socialStatsResults).length === 0) {
+      return null
+    }
+
     // Find the first successful platform result
     for (const [platform, stats] of Object.entries(socialStatsResults)) {
       if (stats && Array.isArray(stats)) {
@@ -153,7 +168,7 @@ class SocialStatsService {
       }
     }
 
-    // Fall back to static stats
+    // Fall back to static stats only if platforms were enabled but failed
     return fallbackStats
   }
 }

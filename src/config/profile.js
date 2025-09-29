@@ -1,9 +1,9 @@
 export const profileConfig = {
   // Basic profile info
-  name: "Your Name",
-  initials: "YN",
-  avatar: null, // Set to image URL/path to display avatar, null to show initials
-  bio: "Full Stack Developer | Open Source Enthusiast",
+  name: "Chris Hooks",
+  initials: "CH",
+  avatar: "https://media.licdn.com/dms/image/v2/C4E03AQHN-NIyNGvf6w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1639329424160?e=1761782400&v=beta&t=8hUszSO7J4F5yOnCYZ3s4Z9KZtVyGp9dv67vt5sj4bo", // Set to image URL/path to display avatar, null to show initials
+  bio: "Founder | Fractional CTO",
   tagline: "Building amazing things with code ✨",
 
   // Social stats configuration - specify which platforms to pull data from
@@ -11,7 +11,7 @@ export const profileConfig = {
     // GitHub stats (repos, followers, stars)
     github: {
       username: "ChrisHooks",
-      enabled: true,
+      enabled: false,
       stats: [
         { type: "public_repos", label: "Repos" },
         { type: "followers", label: "Followers" },
@@ -62,20 +62,13 @@ export const profileConfig = {
 
   // Links configuration
   links: [
-    {
-      id: "github",
-      title: "GitHub Profile",
-      url: "https://github.com/ChrisHooks",
-      icon: "📱",
-      className: "github"
-    },
-    {
-      id: "portfolio",
-      title: "Portfolio Website",
-      url: "https://yourportfolio.com",
-      icon: "🌐",
-      className: "portfolio"
-    },
+    // {
+    //   id: "github",
+    //   title: "GitHub Profile",
+    //   url: "https://github.com/ChrisHooks",
+    //   icon: "📱",
+    //   className: "github"
+    // },
     {
       id: "linkedin",
       title: "LinkedIn",
@@ -84,26 +77,33 @@ export const profileConfig = {
       className: "linkedin"
     },
     {
-      id: "twitter",
-      title: "Twitter",
-      url: "https://twitter.com/yourusername",
-      icon: "🐦",
-      className: "twitter"
+      id: "portfolio",
+      title: "Portfolio Website",
+      url: "https://yourportfolio.com",
+      icon: "🌐",
+      className: "portfolio"
     },
-    {
-      id: "email",
-      title: "Email Me",
-      url: "mailto:your.email@example.com",
-      icon: "✉️",
-      className: "email"
-    },
-    {
-      id: "resume",
-      title: "Download Resume",
-      url: "https://yourresume.com/resume.pdf",
-      icon: "📄",
-      className: "resume"
-    }
+    // {
+    //   id: "twitter",
+    //   title: "Twitter",
+    //   url: "https://twitter.com/yourusername",
+    //   icon: "🐦",
+    //   className: "twitter"
+    // },
+    // {
+    //   id: "email",
+    //   title: "Email Me",
+    //   url: "mailto:your.email@example.com",
+    //   icon: "✉️",
+    //   className: "email"
+    // },
+    // {
+    //   id: "resume",
+    //   title: "Download Resume",
+    //   url: "https://yourresume.com/resume.pdf",
+    //   icon: "📄",
+    //   className: "resume"
+    // }
   ],
 
   // Footer configuration
