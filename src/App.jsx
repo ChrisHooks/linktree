@@ -50,7 +50,17 @@ function App() {
         aria-label="Toggle theme"
       />
 
-      <div className="profile-image">{profileConfig.initials}</div>
+      <div className="profile-image">
+        {profileConfig.avatar ? (
+          <img
+            src={profileConfig.avatar}
+            alt={`${profileConfig.name} avatar`}
+            className="avatar-image"
+          />
+        ) : (
+          profileConfig.initials
+        )}
+      </div>
       <h1 className="profile-name">{profileConfig.name}</h1>
       <p className="profile-bio">
         {profileConfig.bio}<br />

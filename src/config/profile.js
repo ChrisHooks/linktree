@@ -2,6 +2,7 @@ export const profileConfig = {
   // Basic profile info
   name: "Your Name",
   initials: "YN",
+  avatar: null, // Set to image URL/path to display avatar, null to show initials
   bio: "Full Stack Developer | Open Source Enthusiast",
   tagline: "Building amazing things with code ✨",
 
