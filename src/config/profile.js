@@ -76,13 +76,13 @@ export const profileConfig = {
       icon: "💼",
       className: "linkedin"
     },
-    {
-      id: "portfolio",
-      title: "Portfolio Website",
-      url: "https://yourportfolio.com",
-      icon: "🌐",
-      className: "portfolio"
-    },
+    // {
+    //   id: "portfolio",
+    //   title: "Portfolio Website",
+    //   url: "https://yourportfolio.com",
+    //   icon: "🌐",
+    //   className: "portfolio"
+    // },
     // {
     //   id: "twitter",
     //   title: "Twitter",
